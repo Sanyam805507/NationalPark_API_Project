@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -11,6 +12,7 @@ namespace NationalPark_API_Project.Controllers
 {
     [Route("api/nationalPark")]
     [ApiController]
+    [Authorize]
     public class NationalParkController : Controller
     {
         private readonly INationalParkRepository _nationalParkRepository;

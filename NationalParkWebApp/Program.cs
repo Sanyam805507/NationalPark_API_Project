@@ -1,5 +1,9 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using NationalPark_API_Project;
 using NationalParkWebApp.Repository;
 using NationalParkWebApp.Repository.IRepository;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +12,10 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddScoped<INationalParkRepository,NationalParkRepository>();   
 builder.Services.AddScoped<ITrailRepository,TrailRepository>();    
 builder.Services.AddHttpClient();
+
+
+
+
 
 var app = builder.Build();
 
